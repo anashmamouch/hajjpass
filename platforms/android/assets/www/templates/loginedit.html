@@ -1,0 +1,40 @@
+<ion-view cache-view="false" ng-controller="editLoginCtrl">
+
+    <ion-nav-title>
+
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-checkmark" ng-click="editLogin()"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+
+        <div class="content">
+            <div class="field" ng-class="{'has-error': error.old, 'is-focused has-label': oldFocus, 'has-label': data.oldPass.length}">
+                <label class="field-label">{{"old_password"| translate}} <span class="red icon-required">*</span></label>
+                <input id="oldPass" class="field-input" type="password" ng-model="data.oldPass" required="required" ng-focus="oldFocus = true;oldBlur = false" ng-blur="oldFocus = false;oldBlur = true">
+                <button class="button button-icon icon ion-eye" data-id="oldPass" ng-click="changeInputType('oldPass')"></button>
+                <p ng-if="error.old" ng-class="{'has-error': error.old}">{{error.old}}</p>
+            </div>
+            <div class="field" ng-class="{'is-focused has-label': newFocus, 'has-label': data.newPass.length}">
+                <label class="field-label">{{"new_password"| translate}} <span class="red icon-required">*</span></label>
+                <input id="newPass" class="field-input" type="password" ng-model="data.newPass" required="required" ng-focus="newFocus = true;blur = false" ng-blur="newFocus = false;blur = true" >
+                <button class="button button-icon icon ion-eye" data-id="newPass" ng-click="changeInputType('newPass')"></button>
+            </div>
+            <div class="field" ng-class="{'has-error': error.conf, 'is-focused has-label': confFocus, 'has-label': data.confNewPass.length}">
+                <label class="field-label">{{"confirm_new_password"| translate}} <span class="red icon-required">*</span></label>
+                <input id="confPass" class="field-input" type="password" ng-model="data.confNewPass" required="required" ng-focus="confFocus = true;blur = false" ng-blur="confFocus = false;blur = true" >
+                <button class="button button-icon icon ion-eye" data-id="confPass" ng-click="changeInputType('confPass')"></button>
+                <p ng-if="error.conf" ng-class="{'has-error': error.conf}">{{error.conf}}</p>
+            </div>
+
+            <p>* {{"required_fields"| translate}}.</p>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

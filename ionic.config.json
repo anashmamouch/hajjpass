@@ -1,0 +1,14 @@
+{
+  "name": "PAUserApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*"
+  ],
+  "type": "ionic1"
+}

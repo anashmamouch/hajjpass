@@ -1,0 +1,13 @@
+<ion-view cache-view="false">
+    <ion-content ng-controller="loadingCtrl">
+        <div class="content loading-box">
+            <div class="container">
+                <img class="logo" src="img/logo-colmar.png">
+                <p><ion-spinner icon="dots"></ion-spinner> </p>
+                <p>{{"loading" | translate}}</p>
+                <p ng-if="loaderMessage">{{"download_images" | translate}}</p>
+                <tek-progress-bar ng-if="isBar" class="m-tb-sm" bar-class="progress-bar-warning" ng-model="bar2ProgressVal" manager="bar2">{{bar2ProgressVal | number : 0 | limitLoading}}%</tek-progress-bar>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,81 @@
+<ion-view cache-view="false">
+    <ion-nav-title>
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search" ng-click="searchModal.show()" transitiontype="slide"
+                direction="up" transition></button>
+        <button class="button button-icon icon ion-android-more-vertical" ng-click="popoverOpen($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scrollprovider>
+        <div class="flex-container wrap">
+            <div class="gallery" ng-repeat="provider in providers |  orderBy: orderBy track by $index">
+                <div class="list card">
+                    <a transitiontype="fade" direction="left" transition>
+
+                        <div ng-style="{'background':'transparent url(' + provider.img + ')', 'height': '200px', 'background-repeat': 'no-repeat', 'background-position': 'center', 'background-size' : 'cover'}"
+                             class="item item-image" ng-click="view(provider)">
+                            <!--<img ng-src="{{provider.img}}" width="100%"/>-->
+                        </div>
+                    </a>
+
+                    <div class="item item-body">
+                        <h2>{{provider.name}}</h2>
+                        <p><span>{{provider.city}}</span>
+                            <distance id="provider.idprovider" distance="provider.distance"
+                                      gpsenabled="gpsEnabled"></distance>
+                        </p>
+                        <div class="providerlist-description" data-dd-collapse-text="100">{{provider.description}}</div>
+                        <!-- events -->
+                        <div ng-if="provider.events.length > 0" class="eventOnList">
+                            <div class="events_p"><span class="nbEvents">{{provider.events.length}}</span>
+                                {{"events_on_list"| translate }}
+                            </div>
+                        </div>
+                        <!-- opening hours -->
+                        <div class="provider-opening" ng-if="provider.openings != null && provider.openings != '' ">
+                            <div class="openings-title">{{"op_times"| translate}}</div>
+                            <p><i class="ion-clock"> </i> <span
+                                    ng-if="!provider.isOpen"> {{"closed"| translate}} </span><span
+                                    ng-if="provider.isOpen"><span> {{"open"| translate}} - </span><span>{{provider.op}}</span></span>
+                            </p>
+                        </div>
+                        <!-- advantages -->
+                        <!--<div class="provider-advantages">
+                            <div class="advantages-title" ng-click="showDiscounts($index)">
+                                <img src="img/icon_rcp.png" style="height:20px;" />{{"advantages" | translate}}
+                            </div>
+                            <div ng-show="isShowing($index)">
+                                <div class="provider-advantages-list" ng-if="provider.discounts.length > 0" ng-repeat="discount in provider.discounts track by $index">
+                                    <h4 ng-bind-html="discount.name"></h4>
+                                    <div class="discount-description">
+                                        <span ng-bind-html="discount.description"></span>
+                                        <span ng-if="discount.amount != 0"><p>{{'given_discount' | translate}} : {{discount.amount | currency:"€"}}</p></span>
+                                        <span ng-if="discount.price"><p>{{'price' | translate}} : {{discount.price | currency:"€"}}</p></span>
+                                    </div>
+                                </div>
+                                <div class="provider-advantages-list" ng-if="provider.discounts.length  == 0">
+                                    <h4 ng-bind-html="provider.name"></h4>
+                                    <div class="discount-description">
+                                        <span>{{"free_with_pass" | translate}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="item actions">
+                        <button ng-click="share({{provider}})" class="button button-clear button-assertive ripple">
+                            {{"share"| translate | uppercase}}
+                        </button>
+                        <a ng-click="view(provider)" class="button button-clear button-assertive ripple"
+                           transitiontype="fade" direction="left" transition>{{"explore"| translate | uppercase}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-if="hasAdvertisements">
+        <banniere></banniere>
+    </ion-footer-bar>
+</ion-view>

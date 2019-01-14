@@ -1,0 +1,208 @@
+<ion-view>
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-nav-title>
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+    <ion-content ng-controller="createaccountCtrl">
+
+        <div class="content">
+            <h2>{{"create_account"| translate}}</h2>
+        </div>
+
+        <div class="steps">
+
+            <!-- Numotipass ? -->
+
+            <div class="step disableable" ng-class="{active: activeStep == 'step1a'}" ng-click="activeStep = 'step1a'" disable="disableStep">
+                <div class="step-title" ng-hide="msg.step1a">
+                    <span class="step-number">
+                        <span ng-if="!step.oneA">1a</span>
+                        <span ng-if="step.oneA"><i class="icon ion-checkmark"></i></span>
+                    </span>
+                    <span class="step-text">{{"app_user_passalsace"| translate}}</span> 
+                </div>
+                <div class="step-title" ng-show="msg.step1a">
+                    <span class="step-text">{{"validating_step"| translate}}</span> 
+                </div>
+                <div class="step-content">
+                    <div class="loader" ng-show="loader"><p><ion-spinner></ion-spinner></p></div>
+                    <div ng-hide="loader">
+                        <div class="field" ng-class="{'has-error': error.numotipass, 'is-focused has-label': numotipassFocus, 'has-label': account.numotipass.length}">
+                            <label class="field-label">{{"pass_nb"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="number" class="field-input" ng-model="account.numotipass" required="required" ng-focus="numotipassFocus = true" ng-blur="numotipassFocus = false">
+                            <p ng-if="error.numotipass" ng-class="{'has-error': error.numotipass}">{{error.old}}</p>
+                        </div>					
+                        <p>* {{"required_fields"| translate}}.</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="button button-assertive" ng-click="checkNumotipass()">{{"next"| translate}}</button>
+                        <button class="button button-clear button-assertive" ng-click="returnToHome()">{{"cancel"| translate}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account ? -->
+
+            <div class="step disableable" ng-class="{active: activeStep == 'step1b'}" ng-click="activeStep = 'step1b'; hideStep2b = false" disable="disableStep">
+                <div class="step-title" ng-hide="msg.step1b || error.login">
+                    <span class="step-number">
+                        <span ng-if="!step.oneB">1b</span>
+                        <span ng-if="step.oneB"><i class="icon ion-checkmark"></i></span>
+                    </span>
+                    <span class="step-text">{{"existing_account"| translate}}</span> 
+                </div>
+                <div class="step-title red" ng-if="error.login">
+                    <span class="step-number red">
+                        <span><i class="icon ion-alert-circled"></i></span>
+                    </span>
+                    <span class="step-text">{{error.msg}} {{error.msg2}}</span>
+                </div>
+                <div class="step-title" ng-show="msg.step1b">
+                    <span class="step-text">{{"validating_step"| translate}}</span> 
+                </div>
+                <div class="step-content">
+                    <div class="loader" ng-show="loader"><p><ion-spinner></ion-spinner></p></div>
+                    <div ng-hide="loader">
+                        <div class="field" ng-class="{'is-focused has-label': loginFocus, 'has-label': loginData.login.length}">
+                            <label class="field-label">{{"login"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="text" class="field-input" ng-model="loginData.login" required="required" ng-focus="loginFocus = true" ng-blur="loginFocus = false">
+                        </div>
+                        <div class="field" ng-class="{'has-error': error.old, 'is-focused has-label': pwdFocus, 'has-label': loginData.password.length}">
+                            <label class="field-label">{{"password_message"| translate}} <span class="red icon-required">*</span></label>
+                            <input id="pwd1b" type="password" class="field-input" ng-model="loginData.password" required="required" ng-focus="pwdFocus = true" ng-blur="pwdFocus = false">
+                            <button class="button button-icon icon ion-eye" ng-click="changeInputType('pwd1b')"></button>
+                            <p ng-if="error.old" ng-class="{'has-error': error.old}">{{error.old}}</p>
+                        </div>
+                        <ion-checkbox ng-model="loginData.rememberme">{{"remember_me"| translate}}</ion-checkbox>
+                        <p>* {{"required_fields"| translate}}.</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="button button-assertive" ng-click="login()">{{"next"| translate}}</button>
+                        <button class="button button-clear button-assertive" ng-click="returnToHome()">{{"cancel"| translate}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Create Account -->
+
+            <div class="step" ng-class="{active: activeStep == 'step2'}" ng-hide="activeStep == 'step1b' || hideStep2">
+                <div class="step-title" ng-hide="msg.step2 || error.pwd">
+                    <span class="step-number">
+                        <span ng-if="!step.two">2</span>
+                        <span ng-if="step.two"><i class="icon ion-checkmark"></i></span>
+                    </span>
+                    <span class="step-text">{{"create_account"| translate}}</span> 
+                </div>
+                <div class="step-title" ng-show="msg.step2">
+                    <span class="step-text">{{"validating_step"| translate}}</span> 
+                </div>
+                <div class="step-title red" ng-if="error.pwd">
+                    <span class="step-number red">
+                        <span><i class="icon ion-alert-circled"></i></span>
+                    </span>
+                    <span class="step-text">{{error.msg}}</span>
+                </div>
+                <div class="step-content">
+                    <div class="loader" ng-show="loader"><p><ion-spinner></ion-spinner></p></div>
+                    <div ng-hide="loader">
+                        <div class="field" ng-class="{'is-focused has-label': login2Focus, 'has-label': createData.login.length}">
+                            <label class="field-label">{{"login"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="text" class="field-input" ng-model="createData.login" ng-focus="login2Focus = true" ng-blur="login2Focus = false">
+                        </div>
+                        <div class="field" ng-class="{'is-focused has-label': pwd2Focus, 'has-label': createData.password.length}">
+                            <label class="field-label">{{"password_message"| translate}} <span class="red icon-required">*</span></label>
+                            <input id="pwd2" type="password" class="field-input" ng-model="createData.password" ng-focus="pwd2Focus = true" ng-blur="pwd2Focus = false">
+                            <button class="button button-icon icon ion-eye" ng-click="changeInputType('pwd2')"></button>
+                        </div>
+                        <div class="field" ng-class="{'has-error': error.confPwd, 'is-focused has-label': confpwdFocus, 'has-label': createData.confPassword.length}">
+                            <label class="field-label">{{"password_confirm"| translate}} <span class="red icon-required">*</span></label>
+                            <input id="confpwd" type="password" class="field-input" ng-model="createData.confPassword" ng-focus="confpwdFocus = true" ng-blur="confpwdFocus = false">
+                            <button class="button button-icon icon ion-eye" ng-click="changeInputType('confpwd')"></button>
+                            <p ng-if="error.confPwd" ng-class="{'has-error': error.confPwd}">{{error.msg}}</p>
+                        </div>
+                        <ion-checkbox ng-model="loginData.rememberme">{{"remember_me"| translate}}</ion-checkbox>
+                        <p>* {{"required_fields"| translate}}.</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="button button-assertive" ng-click="createAccount()">{{"next"| translate}}</button>
+                        <button class="button button-clear button-assertive" ng-if="associated" ng-click="returnToHome()">{{"cancel"| translate}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Associate Pass -->
+
+            <div class="step disableable" ng-class="{active: activeStep == 'step2b'}" ng-hide="activeStep == 'step1a' || hideStep2b" ng-click="activeStep = 'step2b'" disable="!disableStep || existingNumotipass">
+                <div class="step-title" ng-hide="msg.step2b">
+                    <span class="step-number">
+                        <span ng-if="!step.twoB">2</span>
+                        <span ng-if="step.twoB"><i class="icon ion-checkmark"></i></span>
+                    </span>
+                    <span class="step-text">{{"associate_pass"| translate}} <br><span class="optional">{{"optional"| translate}}</span></span>
+                </div>
+                <div class="step-title" ng-show="msg.step2b">
+                    <span class="step-text">{{"validating_step"| translate}}</span> 
+                </div>
+                <div class="step-content">
+                    <div class="loader" ng-show="loader"><p><ion-spinner></ion-spinner></p></div>
+                    <div ng-hide="loader">
+                        <div class="field" ng-class="{'has-error': error.numotipass, 'is-focused has-label': numFocus, 'has-label': associateData.numotipass.length}">
+                            <label for="" class="field-label">{{"pass_nb"| translate}}</label>
+                            <input type="tel" class="field-input" ng-model="associateData.numotipass" ng-focus="numFocus = true" ng-blur="numFocus = false">
+                            <p ng-if="error.msg" ng-class="{'has-error': error.numotipass}">{{error.numotipass}}</p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="button button-assertive" ng-click="associatePass()">{{"next"| translate}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Recovery -->
+
+            <div class="step disableable" ng-class="{active: activeStep == 'step3'}" ng-click="activeStep = 'step3'" disable="!disableStep">
+                <div class="step-title" ng-hide="msg.step3 || error.email">
+                    <span class="step-number">
+                        <span ng-if="!step.three">3</span>
+                        <span ng-if="step.three"><i class="icon ion-checkmark"></i></span>
+                    </span>
+                    <span class="step-text">{{"email_recovery"| translate}}</span> 
+                </div>
+                <div class="step-title" ng-show="msg.step3">
+                    <span class="step-text">{{"validating_step"| translate}}</span> 
+                </div>
+                <div class="step-title red" ng-if="error.email">
+                    <span class="step-number red">
+                        <span><i class="icon ion-alert-circled"></i></span>
+                    </span>
+                    <span class="step-text">{{error.email}}</span>
+                </div>
+                <div class="step-content">
+                    <div class="loader" ng-show="loader"><p><ion-spinner></ion-spinner></p></div>
+                    <div ng-hide="loader">
+                        <div class="field" ng-class="{'has-error': error.emptyEmail, 'is-focused has-label': emailFocus, 'has-label': emailData.email.length}">
+                            <label class="field-label">{{"email"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="email" class="field-input" ng-model="emailData.email" ng-focus="emailFocus = true" ng-blur="emailFocus = false">
+                        </div>
+                        <div class="field" ng-class="{'has-error': error.emptyName, 'is-focused has-label': nameFocus, 'has-label': emailData.name.length}">
+                            <label class="field-label"> {{"name"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="text" class="field-input" ng-model="emailData.name" ng-focus="nameFocus = true" ng-blur="nameFocus = false">
+                        </div>
+                        <div class="field" ng-class="{'has-error': error.emptyFirstName, 'is-focused has-label': firstNameFocus, 'has-label': emailData.firstName.length}">
+                            <label class="field-label"> {{"first_name"| translate}} <span class="red icon-required">*</span></label>
+                            <input type="text" class="field-input" ng-model="emailData.firstName" ng-focus="firstNameFocus = true" ng-blur="firstNameFocus = false">
+                            <p ng-if="error.msg" ng-class="{'has-error': error.emptyEmail}">{{error.emptyEmail}}</p>
+                        </div>
+                        <p>* {{"required_fields"| translate}}.</p>
+                        <ion-checkbox ng-model="emailData.newsletter">{{"newsletter"| translate}}</ion-checkbox>
+                    </div>
+                    <div class="buttons">
+                        <button class="button button-assertive" ng-click="addEmail()">{{"finish"| translate}}</button>
+                    </div>
+                </div>
+            </div>		
+        </div>
+
+    </ion-content>
+</ion-view>

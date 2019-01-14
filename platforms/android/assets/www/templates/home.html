@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-nav-title>
+
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search" ng-click="searchModal.show()" nav-direction="back"></button>
+        <button class="button button-icon icon ion-android-more-vertical" ng-click="modal.show()"
+                nav-direction="back"></button>
+    </ion-nav-buttons>
+
+    <ion-tabs class="tabs-striped tabs-background-calm tabs-color-light" ng-class="{'tabs-top': platform == android}">
+        <ion-tab title="{{'list'| translate | uppercase}}" ui-sref="app.home.listpartners">
+            <ion-nav-view name="listPartners"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="{{'map'| translate | uppercase}}" ui-sref="app.home.mappartners">
+            <ion-nav-view name="mapPartners"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view view-cache="false">
+	<ion-nav-title>
+		<img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+<img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15"/>
+	</ion-nav-title>
+	<ion-content ng-controller="purchaseCtrl" class="overflow-scroll">
+	
+		<iframe id="webshopContainer" name="webshop" ng-hide="message" ng-src="{{src}}" ng-onload="checkIframeLoaded()"></iframe>
+		
+		<div class="content" ng-show="message">
+			<p>{{message}}</p>
+		</div>
+		
+	</ion-content>
+</ion-view>

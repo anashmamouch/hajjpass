@@ -1,0 +1,16 @@
+<ion-view cache-view="false">
+    <ion-nav-title>
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+
+    <ion-tabs class="tabs-striped tabs-background-calm tabs-color-light" ng-class="{'tabs-top': platform == android}">
+        <ion-tab title="{{'personal_info'| translate | uppercase}}" ui-sref="app.accountedit.personalinfos">
+            <ion-nav-view name="personalInfos"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="{{'identifiers'| translate | uppercase}}" ui-sref="app.accountedit.identifiers">
+            <ion-nav-view name="identifiers"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>
