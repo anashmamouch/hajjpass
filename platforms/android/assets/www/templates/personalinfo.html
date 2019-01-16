@@ -1,0 +1,89 @@
+<ion-view cache-view="false" ng-controller="personCtrl">
+	
+	<ion-nav-title>
+    	
+		<img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+<img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15"/>
+	</ion-nav-title>
+	
+	<ion-nav-buttons side="right">
+		<button class="button icon ion-checkmark" ng-click="processHolder()"></button>
+	</ion-nav-buttons>
+
+	<ion-content>
+		
+		<div class="person-img">
+			<div class="default-img" ng-if="!data.srcImg">
+				<i class="icon ion-person"></i>
+			</div>
+			<div class="img" ng-if="data.srcImg">
+				<img ng-src="{{data.srcImg}}">
+			</div>
+			<div class="btn">
+				<button class="button button-assertive action-button" ng-click="takePicture()"><i class="icon ion-camera"></i></button>	
+			</div>
+		</div>
+		<div class="content">
+				
+			<label class="item item-input item-select">
+				<div class="input-label">{{"civility" | translate}}</div>
+				<select ng-model="data.title">
+					<option selected value="M.">{{"mr" | translate}}</option>
+					<option value="Mme">{{"mrs" | translate}}</option>
+				</select>
+			</label>
+			
+			<div class="field" ng-class="{'is-focused has-label': firstnameFocus, 'has-label': data.firstname.length}">
+				<label class="field-label">{{"first_name" | translate}}</label>
+				<input type="text" class="field-input" ng-model="data.firstname" ng-focus="firstnameFocus=true" ng-blur="firstnameFocus=false">
+			</div>
+		  	
+		  	<div class="field" ng-class="{'is-focused has-label': lastnameFocus, 'has-label': data.lastname.length}">
+				<label class="field-label">{{"name" | translate}}</label>
+			    <input type="text" class="field-input" ng-model="data.lastname" ng-focus="lastnameFocus=true" ng-blur="lastnameFocus=false">
+		  	</div>
+		  	
+		  	<div class="field" ng-class="{'is-focused has-label': birthdateFocus, 'has-label': data.birthdate.length}">
+				<label class="field-label">{{"birthdate" | translate}}</label>
+			    <input type="date" class="field-input" ng-model="data.birthdate" ng-focus="birthdateFocus=true" ng-blur="birthdateFocus=false">
+		  	</div>
+		
+			<div class="field" ng-class="{'is-focused has-label': telFocus, 'has-label': data.telephone.length}">
+				<label class="field-label">{{"phone_number" | translate}}</label>
+				<input type="tel" class="field-input" ng-model="data.telephone" ng-focus="telFocus=true" ng-blur="telFocus=false">
+			</div>
+			
+			<div class="field" ng-class="{'is-focused has-label': emailFocus, 'has-label': data.email.length}">
+				<label class="field-label">{{"email" | translate}}</label>
+			    <input type="email" class="field-input" ng-model="data.email" ng-focus="emailFocus=true" ng-blur="emailFocus=false">
+			</div>
+		
+			<div class="field" ng-class="{'is-focused has-label': addressFocus, 'has-label': data.address.length}">
+				<label class="field-label">{{"address" | translate}}</label>
+			    <input type="text" class="field-input" ng-model="data.address" ng-focus="addressFocus=true" ng-blur="addressFocus=false">
+			</div>			
+			
+			<div class="field" ng-class="{'is-focused has-label': address2Focus, 'has-label': data.address_2.length}">
+				<label class="field-label">{{"address_2" | translate}}</label>				
+			    <input type="text" class="field-input" ng-model="data.address_2" ng-focus="address2Focus=true" ng-blur="address2Focus=false">
+			</div>	
+			
+			<div class="field" ng-class="{'is-focused has-label': postalcodeFocus, 'has-label': data.postalcode.length}">
+				<label class="field-label">{{"postal_code" | translate}}</label>				
+			    <input type=text class="field-input" ng-model="data.postalcode" ng-focus="postalcodeFocus=true" ng-blur="postalcodeFocus=false">
+			</div>
+			
+			<div class="field" ng-class="{'is-focused has-label': cityFocus, 'has-label': data.city.length}">
+				<label class="field-label">{{"city" | translate}}</label>				
+			    <input type="text" class="field-input" ng-model="data.city" ng-focus="cityFocus=true" ng-blur="cityFocus=false">
+			</div>
+			
+			<label class="item item-input item-select">
+				<div class="input-label">{{"country" | translate}}</div>
+				<select ng-model="data.country_code_id" ng-options="key as value for (key, value) in countries"></select>
+			</label>			  	
+		
+		</div>
+		
+	</ion-content>
+</ion-view>

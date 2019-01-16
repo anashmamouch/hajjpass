@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-device@1.1.1",
+        "scope": null,
+        "escapedName": "cordova-plugin-device",
+        "name": "cordova-plugin-device",
+        "rawSpec": "1.1.1",
+        "spec": "1.1.1",
+        "type": "version"
+      },
+      "C:\\Users\\Amir\\Documents\\Workspace\\mobile_app\\V2\\Nice"
+    ]
+  ],
+  "_from": "cordova-plugin-device@1.1.1",
+  "_id": "cordova-plugin-device@1.1.1",
+  "_inCache": true,
+  "_location": "/cordova-plugin-device",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "stevegill",
+    "email": "stevengill97@gmail.com"
+  },
+  "_npmVersion": "3.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-device@1.1.1",
+    "scope": null,
+    "escapedName": "cordova-plugin-device",
+    "name": "cordova-plugin-device",
+    "rawSpec": "1.1.1",
+    "spec": "1.1.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-device/-/cordova-plugin-device-1.1.1.tgz",
+  "_shasum": "bd9fdc061b06f5d99185e804ead7db4d911eae3a",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-device@1.1.1",
+  "_where": "C:\\Users\\Amir\\Documents\\Workspace\\mobile_app\\V2\\Nice",
+  "author": {
+    "name": "Apache Software Foundation"
+  },
+  "bugs": {
+    "url": "https://github.com/apache/cordova-plugin-device/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-device",
+    "platforms": [
+      "firefoxos",
+      "tizen",
+      "android",
+      "amazon-fireos",
+      "ubuntu",
+      "ios",
+      "blackberry10",
+      "wp7",
+      "wp8",
+      "windows8",
+      "windows",
+      "browser",
+      "osx"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Device Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "bd9fdc061b06f5d99185e804ead7db4d911eae3a",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-device/-/cordova-plugin-device-1.1.1.tgz"
+  },
+  "homepage": "https://github.com/apache/cordova-plugin-device#readme",
+  "keywords": [
+    "cordova",
+    "device",
+    "ecosystem:cordova",
+    "cordova-firefoxos",
+    "cordova-tizen",
+    "cordova-android",
+    "cordova-amazon-fireos",
+    "cordova-ubuntu",
+    "cordova-ios",
+    "cordova-blackberry10",
+    "cordova-wp7",
+    "cordova-wp8",
+    "cordova-windows8",
+    "cordova-windows",
+    "cordova-browser",
+    "cordova-osx"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "stevegill",
+      "email": "stevengill97@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-device",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apache/cordova-plugin-device.git"
+  },
+  "scripts": {},
+  "version": "1.1.1"
+}

@@ -1,0 +1,25 @@
+<ion-view view-title="{{'authentication_message' | translate}}" view-cache="false">
+	
+	<ion-content ng-controller="loginCtrl">
+	
+		<div class="content">
+			<div class="field" ng-class="{'is-focused has-label': loginFocus, 'has-label': data.username.length}">
+				<label class="field-label">{{"login_message" | translate}} <span class="red icon-required">*</span></label> 
+				<input class="field-input" type="text" ng-model="data.username" required="required" ng-focus="loginFocus=true" ng-blur="loginFocus=false">
+			</div>
+			<div class="field" ng-class="{'is-focused has-label': pwdFocus, 'has-label': data.password.length}">
+				<label class="field-label">{{"password_message" | translate}} <span class="red icon-required">*</span></label>
+				<input id="pwd" class="field-input" type="password" ng-model="data.password" required="required" ng-focus="pwdFocus=true" ng-blur="pwdFocus=false">
+				<button class="button button-icon icon ion-eye" ng-click="changeInputType('pwd')"></button>
+			</div>
+			<ion-checkbox ng-model="data.rememberme">{{"remember_me" | translate}}</ion-checkbox>
+			<p>* {{"required_fields" | translate}}.</p>
+			<button style="margin-left:-8px !important" class="button button-assertive" ng-click="login()">{{"connection" | translate}}</button>
+		</div>
+		
+		<!-- <div class="content">
+			<p><a href="#">{{"forget_password" | translate}}</a></p>
+		</div> -->
+		
+	</ion-content>
+</ion-view>

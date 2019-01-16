@@ -1,0 +1,100 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// Colors
+// ---------------------------
+// Primary colors
+$positive:                        #871036 !default;
+$calm:                            #bc475f !default;
+$primary-light: 		  		  #ffa8bc !default;
+
+// Secondary colors
+$assertive:                       #e95e53 !default;
+$secondary-medium:                #ff8f80 !default;
+$secondary-light:                 #ffc1af !default;
+
+$white:                           #fff !default;
+$black:                           #000 !default;
+$red:                             #F44336 !default;
+
+
+// Base
+// -------------------------------
+
+$font-family-sans-serif:          '-apple-system', "Roboto", "Helvetica Neue", "Segoe UI", sans-serif !default;
+$ubuntu: 						  "ubuntu", '-apple-system', "Roboto", "Helvetica Neue", "Segoe UI", sans-serif !default;
+
+// Bars
+// -------------------------------
+
+$bar-height:                      56px !default;
+$menu-logo-height:                148px !default;
+
+// Tabs
+// -------------------------------
+
+$tabs-height:                     58px !default;
+$tabs-text-font-size:             14px !default;
+
+$tab-item-max-width:              264px !default;
+$tab-item-min-width:              72px !default;
+
+$tabs-off-opacity:                0.7 !default;
+
+// Buttons
+// --------------------------------
+$button-clear-padding:            8px !default;
+
+$button-font-size:                14px !default;
+$button-height:                   36px !default;
+$button-padding:                  16px !default;
+
+// Grids
+// ---------------------------------
+$grid-responsive-sm-break:        567px !default;  // smaller than landscape phone
+$grid-responsive-md-break:        767px !default;  // smaller than portrait tablet
+$grid-responsive-lg-break:        1023px !default; // smaller than landscape tablet
+
+
+// Popups
+// -------------------------------
+$popup-width:                     350px !default;
+
+// Modal
+// -------------------------------
+$modal-inset-mode-break-point:    100% !default;
+
+// Z-Indexes
+// -------------------------------
+$z-index-popup:                   14 !default;
+
+// Platform
+// -------------------------------
+$ios-statusbar-height:           15px !default;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include custom changes
+@import "fonts"; 
+@import	"custom";
+
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+

@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-locationservices",
+        "scope": null,
+        "escapedName": "cordova-plugin-locationservices",
+        "name": "cordova-plugin-locationservices",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Amir\\Documents\\Workspace\\mobile_app\\V2\\Alsace\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-locationservices@latest",
+  "_id": "cordova-plugin-locationservices@2.1.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-locationservices",
+  "_nodeVersion": "5.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-locationservices-2.1.0.tgz_1456180477772_0.9406618827488273"
+  },
+  "_npmUser": {
+    "name": "louisbl",
+    "email": "louis@beltramo.me"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-locationservices",
+    "scope": null,
+    "escapedName": "cordova-plugin-locationservices",
+    "name": "cordova-plugin-locationservices",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-locationservices/-/cordova-plugin-locationservices-2.1.0.tgz",
+  "_shasum": "d5cacf9da66d8c6b42abb794e1fd36dca18ff26b",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-locationservices",
+  "_where": "C:\\Users\\Amir\\Documents\\Workspace\\mobile_app\\V2\\Alsace\\node_modules",
+  "author": {
+    "name": "louisbl"
+  },
+  "bugs": {
+    "url": "https://github.com/louisbl/cordova-plugin-locationservices/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-locationservices",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Android geolocation plugin using Google Play Services Location API.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "d5cacf9da66d8c6b42abb794e1fd36dca18ff26b",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-locationservices/-/cordova-plugin-locationservices-2.1.0.tgz"
+  },
+  "gitHead": "37ada80b0df1dce94c5988f259857efd9d90048e",
+  "homepage": "https://github.com/louisbl/cordova-plugin-locationservices#readme",
+  "keywords": [
+    "cordova",
+    "google-play-services",
+    "geolocation",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "louisbl",
+      "email": "louis@beltramo.me"
+    }
+  ],
+  "name": "cordova-plugin-locationservices",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louisbl/cordova-plugin-locationservices.git"
+  },
+  "scripts": {},
+  "version": "2.1.0"
+}

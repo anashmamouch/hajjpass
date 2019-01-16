@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fir-otipass-alsace",
+  "private_key_id": "32d19d3c46403c334904492707325b33035ede44",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCxE3iTBaHdce47\nbvANFwHhR5f/Gvex2np972pvJF8hJEVbvRdd/ZH25s03qWZhDBLr45XaSY3+0cyU\n1YSokrODGlosyNU/yFBzYD+2IuD3W1yVSlPTguKE2HUvb9M3jfGngWX5lS0njQ0e\nhw5OWOwUbgi/QB90KaEtujiIwsh7cFp2+95Aq9p/D6h7AtbFUmrcyZZxTEZWbFhc\nw5aYvRb2+l3mOb/yEH5MBzTYZ9ab6ZePXeFmf6p8M/U+U2Qs4GpBFOfYvnL7Cpif\nLQLJOzl5RvDIiCYAj1ZFJL7eU54XMvEGkM3DsszWdGBpMwONrAQ7fPkqaiwNpxw3\nvVQuRHYRAgMBAAECggEASxKvNt3XbzQjRW1WNqZ/dIxO46gCRZQUBJphbHdmIX3o\nLemwI3gizyOw851NO23MA9g8KwyuN8+oxZz0nid8FeQxQPVwe5cojJHM0SJecGB6\nkwytF2pRMPM4U4E8cjwqrNKOck8NkswZOM0Xgp3ukQbJjJPaAfy4SdO+rjSunK4j\nryNQYJoDEnmISNuG36MIIgtbUo7sa3wvtnNkWhxjAv+q4dgQpqS0RDzIBWD8aogH\n2UxQUQVE9ov7A0tRd995aqjS1s+m5c9BRPHv8Aa/JZxF4TqgbzX1rloycT/da1K9\ncft/qLr/W7mO0KQdsnaigBM1rPGcPA8c5nLMwzXsBQKBgQDjbBMrRrZzE2QfXaNq\nLb60liosoo10usQwBZUIVl9bhmVkRvL8ADcHBYMTnQqjNHof0vSzHSXqxeYmi7VG\nHpQRIT2+dTsNvTSjopt/dIAGaKH4G/IJnkZUjEFTybFahJPELLUSk9aOTxyNQiqn\noAhOgNzgMdE/0NWxQLehPOZaJwKBgQDHU9D1y1MxOMAHZI8NQeaLYGqR5ZMN6qFb\nKogh1o9mzyv3/vEXvsG7hWq+c4xufs5kWPeI2A4BBRSti23b1f6SzOEEANcaj5+f\npfogF3H8kDGVu934i2SFAQXVPq6RMhSFlKC4q2ZFvti6NZv1OmUc7I57wgghHhQI\nVluyY9JpBwKBgF+Wm3ADJsizi8/LMdZ9J70LqOpd4IsBvVhZ4ExC0Y3MrW06jQLy\nrC5dWLyzszbp5bLenk9ynu9RAu2Mp0Kzs5SHnkYhTBL4RdnJjQZDV1RaQkngpRj5\n16HN2d931P2w39MC35DRZssl4WBWQUt3bkZgz3XEOqlSA5+fDg/NYxzdAoGAf8fG\nlFuE+G/2Aoc/gXM2tTDZALCYhfpc+FGatX6TrYewGypPKja6gVk1JeRzKT6XVxMF\nlK9Uwuib6ekRQzW7HibDNUrImplp7fF8GGiPRSa28tNdqADMLsuKDrtBM4lUSJIQ\nOnJ+fMWssCq/0QRfX5xydvnbNkfO9c1OuVxuva8CgYBLh0xmFUTcaLfqTiONk/et\nBiCXDfcUcTuNSHER/Y+AmP7t0Hg7Tl9wor3HKmtWUOpbhwg4bmKhrEzbh0HWjoqB\nW1CxuqmuxTGmhZgfAF9k6xY0K+vmDa/BbXIAkJHIWHyDDhPVs8s+XvgKWDhL+yyt\nxE97M0zVaWWasa24cNk20Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-crashreporting-zvy3u@fir-otipass-alsace.iam.gserviceaccount.com",
+  "client_id": "105533247005335812156",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-crashreporting-zvy3u%40fir-otipass-alsace.iam.gserviceaccount.com"
+}

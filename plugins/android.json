@@ -1,0 +1,98 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-fabric-plugin": {
+      "FABRIC_API_KEY": "cfb61ca243332104ab00b88dfdaecda691159aa3",
+      "FABRIC_API_SECRET": "072f6ed3d8929df660295c6c89a22a44065b2796f665d56303155068a0df2113",
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-locationservices": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-uniquedeviceid": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "phonegap-nfc": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.otipass.colmar"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.otipass.colmar"
+    }
+  }
+}
