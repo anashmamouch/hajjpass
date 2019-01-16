@@ -1,0 +1,41 @@
+<ion-view cache-view="false">
+    <ion-nav-title>
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-checkmark" ng-click="associate()"></button>
+    </ion-nav-buttons>
+    <ion-content ng-controller="associateCtrl">
+
+        <div class="content">
+
+            <h2>{{"associate_pass"| translate}}</h2>
+
+            <p>{{"enter_pass_number"| translate}}</p>
+
+            <div ng-hide="loader" class="field"
+                 ng-class="{'has-error': error.msg, 'is-focused has-label': numotipassFocus, 'has-label': data.numotipass.length}">
+                <label for="" class="field-label">{{"pass_nb"| translate}} <span
+                        class="red icon-required">*</span></label>
+                <input type="number" class="field-input" ng-model="data.numotipass" ng-focus="numotipassFocus = true"
+                       ng-blur="numotipassFocus = false">
+                <p ng-if="error.msg" ng-class="{'has-error': error.msg}">{{error.msg}}</p>
+            </div>
+            <div class="loader" ng-show="loader">
+                <p>
+                    <ion-spinner></ion-spinner>
+                    {{"validating_step"| translate}}
+                </p>
+            </div>
+           <div id="nfc" ng-click="scanPassQR()">
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        {{"nfc_scan"| translate}}
+                    </div>
+                    <img src="img/nfc-icon-15.png" style="width:100%;" />
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-modal-view ng-controller="searchCtrl">
+
+    <ion-header-bar class="bar bar-header bar-positive">
+        <div class="buttons">
+            <button class="button button-icon icon ion-close" ng-click="searchModal.hide()" transitiontype="slide" direction="down" transition></button>
+        </div>
+        <h1 class="title search-header-title">{{"search" | translate}}</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+        <div class="content search-title" overflow-scroll="false">
+
+            <div class="field" ng-class="{'is-focused has-label': focus, 'has-label': query.text.length}">
+                <label class="field-label">{{"search" | translate}}</label>
+                <input type="search" class="field-input" ng-model="query.text" ng-focus="focus=true" ng-blur="focus=false">
+                <button class="button button-icon icon ion-close" ng-click="resetQuery()"></button>
+            </div>
+
+            <div ng-if="query.text.length > 0" class="list" ng-repeat="provider in providers | filter:query.text:searchFn | orderBy: 'name'">
+                <a class="item item-avatar" href="#/app/partnerdetail/{{provider.idprovider}}" ng-click="searchModal.hide()">
+                    <img ng-src="{{provider.img}}">
+                    <h2>{{provider.name}}</h2>
+                </a>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+</ion-modal-view>

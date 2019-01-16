@@ -1,0 +1,20 @@
+{
+  "name": "bordeauxuserapp",
+  "description": "PAUserApp: An Ionic project",
+  "main": "",
+  "authors": [
+    "Nicolas Alric <daffyfrog@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-moment": "^1.2.0"
+  }
+}

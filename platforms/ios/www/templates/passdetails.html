@@ -1,0 +1,93 @@
+<ion-view cache-view="false">
+    <ion-nav-title>
+        <img class="view-PA-logo" src="img/logo-colmar.png" height="25">
+        <img class="view-otipass-logo" src="img/otipass-logo.svg" width="55" height="15">
+    </ion-nav-title>
+
+    <ion-content>
+        <div class="content">
+
+            <h2>{{"pass_details" | translate}}</h2>
+
+            <div class="qrcode-container">
+                <div id="qrcode" class="qrcode"></div>
+            </div>
+
+            <div class="item-divider">
+                {{"pass_infos" | translate}}
+            </div>
+
+            <div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"pass_nb" | translate}}</span> <br>{{otipass.numotipass}}
+                    </p>
+                </div>
+            </div>
+            <div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"pass_status" | translate}}</span> <br>{{otipass.status_txt}}
+                    </p>
+                </div>
+            </div>
+            <div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"pass_type" | translate}}</span> <br>{{otipass.name}}
+                    </p>
+                </div>
+            </div>
+            <div class="list-content" ng-hide="hidePassValidity">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"pass_validity_date" | translate}}</span> <br>{{otipass.validity.value}}
+                    </p>
+                </div>
+            </div>
+            <!--div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"nb_remaining_day_use" | translate}}</span> <br>{{otipass.nb_days}} {{"days" | translate}}
+                    </p>
+                </div>
+            </div>-->
+            <!--<div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"pos" | translate}}</span> <br>{{otipass.pos}} <span class="badge">{{otipass.tariff}} €</span>
+                    </p>
+                </div>
+            </div>-->
+            <div class="list-content">
+                <div class="list-text">
+                    <p>
+                        <span class="list-title">{{"order_date" | translate}}</span> <br>{{otipass.order_date.value}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="item-divider" ng-if="services">
+                {{"services_list" | translate}}
+            </div>
+
+            <div class="list-content" ng-repeat="service in services track by $index" ng-if="services">
+                <div class="list-text">
+                    <p><span class="list-title">{{service.name}}</span><br><span ng-class="{red: service.nb == 0}">{{"nb_entries" | translate}} : {{service.nb}}</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+    <ion-footer-bar>
+        <div class="tabs">
+
+            <a ng-repeat="pass in otipassList" ng-click="onTabChange($index)" ng-class="{active: $index == index}"
+               class="tab-item">
+                {{pass.numotipass}}
+            </a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

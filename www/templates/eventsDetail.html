@@ -1,0 +1,30 @@
+<ion-modal-view>
+
+	<ion-header-bar class="bar bar-header bar-positive">
+        <div class="buttons">
+            <button class="button button-icon icon ion-close" ng-click="eventModal.hide()" transitiontype="slide" direction="down" transition></button>
+        </div>
+        <h1 class="title search-header-title">{{"events" | translate}}</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+		<div class="flex-container wrap">
+			<div class="content">
+            	<div class="gallery" ng-repeat="event in provider.events track by $index">
+					<div class="event-detail">
+						<h2>{{event.name}}</h2>
+						<p>{{event.place_name}}</p>
+						<p><period start-date="event.start_date" end-date="event.end_date"></period></p>
+   						<p data-dd-collapse-text="100">{{event.description}}</p>
+						<div ng-if="event.address">
+							<p>{{event.address}}</p>
+						</div>
+					</div> 
+				</div>
+            </div>
+		</div>
+
+	</ion-content>
+
+</ion-modal-view>

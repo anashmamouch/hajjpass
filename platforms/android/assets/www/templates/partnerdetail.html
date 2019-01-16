@@ -1,0 +1,108 @@
+<ion-view view-title="{{providerName}}">	
+    <ion-nav-bar class="bar-clear"></ion-nav-bar>
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-android-arrow-back" ng-click="$ionicGoBack()" transition transitiontype=slide direction="right"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-share-alt"  ng-click="share()" ></button>
+    </ion-nav-buttons>
+    <ion-content class="has-transparent-bar no-header" scrollwatch>
+
+        <div class="provider-img" ng-if="carousel">
+            <ion-slides class="banniere-container" options="options">
+                <ion-slide-page ng-repeat="file in provider.files">
+                    <img ng-src="{{file.src}}">
+                </ion-slide-page>
+            </ion-slides>
+        </div>
+        
+        <div class="content">
+            <div class="provider-detail">
+                <h1>{{provider.name}}</h1>
+                <p class="address">{{provider.address}}<span ng-show="address2"> {{provider.address_2}}</span><span ng-show="provider.address">,</span> {{provider.postalcode}} {{provider.city}}</p>			
+                <div ng-if="!provider.long_description" data-ng-bind-html="provider.description"></div>
+                <div ng-if="provider.long_description" ng-bind-html="tidy(provider.long_description)"></div>
+            </div>
+            <hr>
+            <!-- opening hours -->
+            <div ng-if="hasOpening">
+                <h2 class="col col-33">{{"op_times"| translate}}</h2>
+                <div class="provider-divider row responsive-md">
+                    <div ui-calendar="uiConfig.calendar" calendar-watch-event="extraEventSignature(event)" calendar="myCalendar"></div>
+                </div>
+            </div>
+
+            <!-- localization -->
+            <div class="provider-divider responsive-md" ng-class="{'has-opening': hasOpening}">
+                <h2 class="col col-33">{{"localization"| translate}}</h2>
+                <a class="viewmap" ng-href="{{mapUrl}}"><i class="icon ion-location"></i> {{"see_map"| translate}}</a>
+            </div>
+
+        </div>
+
+        <!-- events -->
+        <div id="events" class="provider-events row responsive-md" ng-show="provider.events">
+            <h2 class="col col-33">{{"events"| translate}}</h2>
+            <div class="col col-67">
+                <div class="provider-event" ng-repeat="event in provider.events">
+                    <h3 class="event-title">{{event.name}}</h3>
+                    <p><span>{{event.place_name}}</span></p>
+                    <p><period start-date="event.start_date" end-date="event.end_date"></period></p>
+                    <p data-dd-collapse-text="100">{{event.description}}</p>
+                </div>
+                <a ng-if="provider.events.length > 1" ng-click="goEvents({{provider.idprovider}})" class="button button-clear button-assertive">{{"more_events"| translate | uppercase}}</a>
+            </div>
+        </div>
+
+        <!-- additional infos -->
+        <div class="content">
+            <hr ng-hide="provider.events">
+            <div class="provider-divider row responsive-md">
+                <h2 class="col col-33">{{"additional_infos"| translate}}</h2>
+                <div class="list col col-67">
+                    <div class="item item-icon-left" ng-if="provider.telephone">
+                        <i class="icon ion-android-call"></i> <a href="tel:{{provider.telephone}}">{{provider.telephone}}</a>
+                    </div>
+                    <div class="item item-icon-left" ng-if="provider.email">
+                        <i class="icon ion-email"></i> <a class="button button-clear button-assertive ripple" href="mailto:{{provider.email}}">{{"send_mail"| translate | uppercase}}</a>
+                    </div>
+                    <div class="item item-icon-left" ng-show="website">
+                        <i class="icon ion-earth"></i> <button class="button button-clear button-assertive ripple" ng-click="openWebsite()">{{"website"| translate | uppercase}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>			
+
+        <div class="near-providers" ng-if="nearP">
+            <div class="near-providers-title">
+                <h2>{{"near_places"| translate}}</h2>
+                <div class="btn" ng-if="nearProviders.length > 1">
+                    <button class="button button-positive action-button" ng-disabled="currentPage == 0" ng-click="updatePage(currentPage-1)"><i class="icon ion-chevron-left"></i></button>
+                    <button class="button button-positive action-button" ng-disabled="currentPage >= nearProviders.length / pageSize - 1" ng-click="updatePage(currentPage+1)"><i class="icon ion-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="flex-container wrap">
+                <div class="gallery" ng-repeat="nearProvider in nearProviders| startFrom:currentPage * pageSize | limitTo:pageSize">
+                    <div class="card list">
+                        <div ng-style="{'background':'transparent url(' + nearProvider.img + ')', 'height': '150px', 'background-repeat': 'no - repeat', 'background-position': 'center', 'background-size' : 'cover'}" class="item item-image">
+                            <a ng-click="view({{nearProvider.idprovider}})" transitiontype="fade" direction="left" transition></a>
+                        </div>
+
+                        <div class="item item-body">
+                            <div style="display: table; height: 85px; overflow: hidden;">
+                                <div id="name" style="display: table-cell; vertical-align: middle;">
+                                    <h3>{{nearProvider.name}}</h3>
+                                </div>
+                            </div>
+                            <p>{{nearProvider.city}} <distance id="provider.idprovider" distance="provider.distance" gpsEnabled="gpsEnabled"></distance></p>
+                        </div>
+                        <div class="item actions">
+                            <a class="button button-assertive button-clear ripple" ng-click="view({{nearProvider.idprovider}})" transitiontype="slide" direction="left" transition>{{"explore"| translate | uppercase}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+    </ion-content>
+</ion-view>
